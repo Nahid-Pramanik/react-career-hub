@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Header = () => {
@@ -21,7 +21,7 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-3xl font-extrabold">CareerHub</a>
+                <Link to='/' className="btn btn-ghost text-3xl font-extrabold">CareerHub</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -29,7 +29,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className=" py-5 px-7 btn-linier rounded-lg text-white text-xl font-extrabold tracking-wide">Star Applying</button>
+                <button className=" py-3 px-4 md:py-5 md:px-7 btn-linier rounded-lg text-white text-xl font-extrabold tracking-wide">Star Applying</button>
             </div>
         </div>
     );
