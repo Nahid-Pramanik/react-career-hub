@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 const JobCategory = () => {
     const [categories, setCategories] = useState([]);
-    console.log(categories);
 
     useEffect(() => {
         fetch('categories.json')
