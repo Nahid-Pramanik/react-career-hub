@@ -4,6 +4,9 @@ import { PiSubtitles } from "react-icons/pi";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
+import { saveJObApplication } from "../../Utilitis/fakeDb";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const JobDetails = () => {
@@ -13,6 +16,11 @@ const JobDetails = () => {
     const job = jobs.find(job => job.id === parseInt(id));
     const { job_title, salary, job_description, job_responsibility, educational_requirements, experiences, contact_information } = job;
     const { phone, email, address } = contact_information;
+
+    const handleAddToApply = (id) => {
+        saveJObApplication(id);
+        toast('You have applied Job successfully');
+    }
 
     return (
         <div className="mb-24 m-3">
@@ -55,11 +63,12 @@ const JobDetails = () => {
                         </div>
 
                     </div>
-                    <button className="btn btn-linier text-white tracking-wide w-full mt-6">Apply Now</button>
+                    <button onClick={ ()=>handleAddToApply(id)} className="btn btn-linier text-white tracking-wide w-full mt-6">Apply Now</button>
                 </div>
 
 
             </div>
+            <ToastContainer />
         </div>
     );
 };
